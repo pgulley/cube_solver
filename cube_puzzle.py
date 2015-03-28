@@ -1,30 +1,4 @@
-"""
- Paul Gulley  |  March 2015
-===========================
-Lets solve the cube puzzle!
-
-We have a sequence of 64 wooden cubes strung together with 44 bends
-
-We want to arrange them so they form one 4x4 cube
-
-This is a search problem. The space contains around 4^45 possibilities.
-(3x10^26, or 300 quadrillion)
-
-We're going depth-first. 
-Its too chaotic for many optimizations, but we have a few things on our side: 
-	Symmetry allows for some starting positions to be ignored.
-	We don't check past failure, so we can throw out whole branches as we go.
-	If we need to, we can start checking for cube segmentation, which would let us 
-		throw out more dead ends (not implemented yet, though)
-
-On this machine, it runs at 1 million loops per 15 seconds, or 5.7 billion loops per day.
-	(less than 1 percent of the actual problem space, 
-	but the effective space is much, much smaller. )
-
-
-We reach the end very quickly (a matter of hours), but don't find a solution...
-"""
-
+##pgulley 2015
 import random
 import copy
 
@@ -189,11 +163,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-"""
-Runs to about 830000000 steps 
-At about 4 hours.
 
-Fails to find solution. Further investigation to follow
-"""
 
 
